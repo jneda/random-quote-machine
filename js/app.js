@@ -24,6 +24,7 @@ class QuoteMachine extends React.Component {
 
   getNewQuote() {
     // API_URL : https://api.quotable.io/random
+    // source : https://github.com/lukePeavey/quotable 
     const xhr = new XMLHttpRequest();
 
     let quote;
@@ -51,10 +52,10 @@ class QuoteMachine extends React.Component {
   render() {
     if (this.state.text !== "") {
       return (
-        <div id="quote-box">
+        <div id="quote-box" className="quote-box">
           <QuoteContents text={this.state.text} author={this.state.author} />
           <div className="quote-controls">
-            <a className="tweet-btn" id="tweet-quote" href="twitter.com/intent/tweet" target="_blank"><i className="fa-brands fa-twitter"></i></a>
+            <a className="tweet-btn" id="tweet-quote" href="https://twitter.com/intent/tweet" target="_blank"><i className="fa-brands fa-twitter fa-2x"></i></a>
             <button className="new-quote-btn" id="new-quote" onClick={this.handleClick}>Get another quote</button>
           </div>
         </div>

@@ -1,18 +1,105 @@
+/* colors */
+$lightblue: #CBE3FC;
+$lightestblue: #DCECFC;
+$dark: #292929;
+$whiteblue: #E6F1FD;
+$gray: #C0C0C0;
+
+
+/* fonts */
 $quoteFont: 'Courgette', cursive;
 $baseFont: 'Noto Sans', sans-serif;
 
-body {
-  font-family: $baseFont;
+/* base */
+
+:root,
+:root::before,
+:root::after {
+  box-sizing: border-box;
 }
 
-blockquote {
-  font-family: $quoteFont;
+body {
+  font-family: $baseFont;
+  color: $dark;
+}
 
-  &::before {
-    content: '\201c';
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, $lightblue, $lightestblue);
+}
+
+/* quote machine */
+.quote-box {
+  background-color: $lightestblue;
+  box-shadow: 0px 0px 0px 1px $gray;
+  border-radius: 0.5rem;
+  width: 90%;
+
+  @media screen and (min-width: 376px) {
+    max-width: 30rem;
+  }
+}
+
+.quote-contents {  
+  padding-top: 1rem;
+
+  blockquote {
+    font-family: $quoteFont;
+    font-size: 1.5rem;
+    margin: 0rem;
+    padding: 0 1rem;
+  
+    &::before {
+      content: '\201c';
+    }
+  
+    &::after {
+      content: '\201d';
+    }
   }
 
-  &::after {
-    content: '\201d';
+  cite {
+    display: block;
+    text-align: right;
+    padding-right: 2rem;
+
+    &::before {
+      content: '- ';
+    }
+  }
+}
+
+.quote-controls {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-top: 1.2rem;
+
+  .tweet-btn {
+    padding: 0.3rem;
+    border: 1px solid $gray;
+    border-radius: 50%;
+    background: $whiteblue;
+  }
+
+  .fa-twitter {
+    color: $gray;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    border: 1px solid $gray;
+    border-radius: 0.5rem;
+    background: $whiteblue;
+    padding: 0 1rem;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

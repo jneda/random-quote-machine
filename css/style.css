@@ -1,16 +1,89 @@
 @charset "UTF-8";
-body {
-  font-family: "Noto Sans", sans-serif;
+/* colors */
+/* fonts */
+/* base */
+:root,
+:root::before,
+:root::after {
+  box-sizing: border-box;
 }
 
-blockquote {
-  font-family: "Courgette", cursive;
+body {
+  font-family: "Noto Sans", sans-serif;
+  color: #292929;
 }
-blockquote::before {
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #CBE3FC, #DCECFC);
+}
+
+/* quote machine */
+.quote-box {
+  background-color: #DCECFC;
+  box-shadow: 0px 0px 0px 1px #C0C0C0;
+  border-radius: 0.5rem;
+  width: 90%;
+}
+@media screen and (min-width: 376px) {
+  .quote-box {
+    max-width: 30rem;
+  }
+}
+
+.quote-contents {
+  padding-top: 1rem;
+}
+.quote-contents blockquote {
+  font-family: "Courgette", cursive;
+  font-size: 1.5rem;
+  margin: 0rem;
+  padding: 0 1rem;
+}
+.quote-contents blockquote::before {
   content: "“";
 }
-blockquote::after {
+.quote-contents blockquote::after {
   content: "”";
+}
+.quote-contents cite {
+  display: block;
+  text-align: right;
+  padding-right: 2rem;
+}
+.quote-contents cite::before {
+  content: "- ";
+}
+
+.quote-controls {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-top: 1.2rem;
+}
+.quote-controls .tweet-btn {
+  padding: 0.3rem;
+  border: 1px solid #C0C0C0;
+  border-radius: 50%;
+  background: #E6F1FD;
+}
+.quote-controls .fa-twitter {
+  color: #C0C0C0;
+}
+.quote-controls button {
+  font: inherit;
+  color: inherit;
+  border: 1px solid #C0C0C0;
+  border-radius: 0.5rem;
+  background: #E6F1FD;
+  padding: 0 1rem;
+}
+.quote-controls button:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
