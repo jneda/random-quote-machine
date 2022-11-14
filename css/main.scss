@@ -1,0 +1,18 @@
+$quoteFont: 'Courgette', cursive;
+$baseFont: 'Noto Sans', sans-serif;
+
+body {
+  font-family: $baseFont;
+}
+
+blockquote {
+  font-family: $quoteFont;
+
+  &::before {
+    content: '\201c';
+  }
+
+  &::after {
+    content: '\201d';
+  }
+}

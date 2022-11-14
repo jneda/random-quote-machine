@@ -1,0 +1,16 @@
+@charset "UTF-8";
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+
+blockquote {
+  font-family: "Courgette", cursive;
+}
+blockquote::before {
+  content: "“";
+}
+blockquote::after {
+  content: "”";
+}
+
+/*# sourceMappingURL=style.css.map */
