@@ -22,6 +22,12 @@ body {
   background: linear-gradient(45deg, #CBE3FC, #DCECFC);
 }
 
+/* loading image */
+.loading-animation {
+  height: 25vmin;
+  width: 25vmin;
+}
+
 /* quote machine */
 .quote-box {
   background-color: #DCECFC;

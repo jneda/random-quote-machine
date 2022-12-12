@@ -24,7 +24,9 @@ class QuoteMachine extends React.Component {
 
   getNewQuote() {
     // API_URL : https://api.quotable.io/random
-    // source : https://github.com/lukePeavey/quotable 
+    // source : https://github.com/lukePeavey/quotable
+
+    // kaamelott : https://kaamelott.chaudie.re/api/random
     const xhr = new XMLHttpRequest();
 
     let quote;
@@ -60,7 +62,13 @@ class QuoteMachine extends React.Component {
           </div>
         </div>
       );
-    }    
+    } else {
+      return (
+        <div class="progress">
+          <img class="loading-animation" src="../assets/loading.gif"/>
+        </div>
+      );
+    }   
   }
 }
 

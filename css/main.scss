@@ -32,6 +32,12 @@ body {
   background: linear-gradient(45deg, $lightblue, $lightestblue);
 }
 
+/* loading image */
+.loading-animation {
+  height: 25vmin;
+  width: 25vmin;
+}
+
 /* quote machine */
 .quote-box {
   background-color: $lightestblue;
