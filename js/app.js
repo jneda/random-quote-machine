@@ -22,11 +22,21 @@ class QuoteMachine extends React.Component {
     };
   }
 
-  getNewQuote() {
+  async getNewQuote() {
     // API_URL : https://api.quotable.io/random
     // source : https://github.com/lukePeavey/quotable
 
     // kaamelott : https://kaamelott.chaudie.re/api/random
+
+    const response = await fetch('https://kaamelott.reiter.tf/quote/random');
+    const quoteData = await response.json();
+    console.log(quoteData);
+    this.setState({
+      text: quoteData.citation,
+      author: quoteData.infos.personnage
+    });
+
+    /* 
     const xhr = new XMLHttpRequest();
 
     let quote;
@@ -41,6 +51,7 @@ class QuoteMachine extends React.Component {
 
     xhr.open('GET', 'https://api.quotable.io/random');
     xhr.send();
+     */
   }
 
   handleClick = () => {
@@ -64,8 +75,8 @@ class QuoteMachine extends React.Component {
       );
     } else {
       return (
-        <div class="progress">
-          <img class="loading-animation" src="../assets/loading.gif"/>
+        <div className="progress">
+          <img className="loading-animation" src="../assets/loading.gif"/>
         </div>
       );
     }   
