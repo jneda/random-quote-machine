@@ -1,5 +1,3 @@
-//cf https://github.com/sin0light/api-kaamelott
-
 const QuoteContents = (props) => {
   return (
     <div className="quote-contents">
@@ -23,10 +21,6 @@ class QuoteMachine extends React.Component {
   }
 
   async getNewQuote() {
-    // API_URL : https://api.quotable.io/random
-    // source : https://github.com/lukePeavey/quotable
-
-    // kaamelott : https://kaamelott.chaudie.re/api/random
 
     const response = await fetch('https://kaamelott.reiter.tf/quote/random');
     const quoteData = await response.json();
@@ -35,23 +29,6 @@ class QuoteMachine extends React.Component {
       text: quoteData.citation,
       author: quoteData.infos.personnage
     });
-
-    /* 
-    const xhr = new XMLHttpRequest();
-
-    let quote;
-    xhr.addEventListener('load', () => {
-      quote = JSON.parse(xhr.response);
-
-      this.setState({
-        text: quote.content,
-        author: quote.author
-      });
-    })
-
-    xhr.open('GET', 'https://api.quotable.io/random');
-    xhr.send();
-     */
   }
 
   handleClick = () => {
